@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figuras geometricas</title>
+</head>
+<body onload="draw();">
+    <canvas id="canvas" width="500" height="500"></canvas>
+</body>    
+<script>
+        
+    function draw() {
+        var canvas = document.getElementById('canvas');
+        if (canvas.getContext) {
+            var ctx = canvas.getContext('2d');
+
+            // Triángulo superior relleno de color negro
+            ctx.beginPath();
+            ctx.moveTo(25, 25);
+            ctx.lineTo(105, 25);
+            ctx.lineTo(25, 105);
+            ctx.lineTo(25, 25);
+            ctx.closePath();
+            ctx.fillStyle = 'black'; // Color negro
+            ctx.fill(); // Rellenar el triángulo
+
+            // Triángulo inferior
+            ctx.beginPath();
+            ctx.moveTo(125, 125);
+            ctx.lineTo(125, 45);
+            ctx.lineTo(45, 125);
+            ctx.closePath();
+            ctx.stroke();
+
+            // Círculo con las características especificadas
+            ctx.beginPath();
+            ctx.arc(250, 80, 50, 0, 2 * Math.PI); // x, y, radio, ángulo inicial, ángulo final
+            ctx.fillStyle = '#3070d4'; // Color azul (#3070d4)
+            ctx.fill(); // Rellenar el círculo
+        }
+    }
+
+</script>
+</html>
